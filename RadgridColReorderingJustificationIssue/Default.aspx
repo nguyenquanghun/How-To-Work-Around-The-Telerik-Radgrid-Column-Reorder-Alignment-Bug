@@ -8,9 +8,28 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
         function grid_OnColumnSwapped(sender, eventArgs) {
-            var srcIndex = eventArgs.get_gridSourceColumn().get_element().cellIndex;
-            var targIndex = eventArgs.get_gridTargetColumn().get_element().cellIndex;
-            $('#log').append('<li>OnColumnSwapped: ' + srcIndex + '->' + targIndex + '</li>');
+            var src  = eventArgs.get_gridSourceColumn().get_element();
+            var targ = eventArgs.get_gridTargetColumn().get_element();
+            var srcPosition = src.cellIndex + 1;
+            var targPosition = targ.cellIndex + 1;
+            var srcCells = $('#grid tbody tr td:nth-child(' + srcPosition + ')');
+            var targCells = $('#grid tbody tr td:nth-child(' + targPosition + ')');
+            if (srcCells.length >= 1) {
+                var srcAlign = srcCells.attr('align');
+                var targAlign = targCells.attr('align');
+                if (typeof targAlign == 'undefined')
+                    srcCells.removeAttr('align');
+                else
+                    srcCells.attr('align', targAlign);
+                if (typeof srcAlign == 'undefined')
+                    targCells.removeAttr('align');
+                else
+                    targCells.attr('align', srcAlign);
+//                srcCells.attr('align', targAlign);
+//                targCells.attr('align', srcAlign);
+            }
+
+            $('#log').append('<li>OnColumnSwapped: ' + src.cellIndex + '(' + src.align + ')->' + targ.cellIndex + '(' + targ.align + ')</li>');
         }
 
         function grid_OnColumnSwapping(sender, eventArgs) {
