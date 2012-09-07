@@ -14,14 +14,16 @@
             var targPosition = targ.cellIndex + 1;
             var srcCells = $('#grid tbody tr td:nth-child(' + srcPosition + ')');
             var targCells = $('#grid tbody tr td:nth-child(' + targPosition + ')');
-            if (srcCells.length >= 1) {
-                var srcAlign = srcCells.attr('align');
-                var targAlign = targCells.attr('align');
-                if (typeof targAlign == 'undefined') targAlign = "";
-                if (typeof srcAlign == 'undefined') srcAlign = "";
-                srcCells.attr('align', targAlign);
-                targCells.attr('align', srcAlign);
-            }
+            swapAttributes(srcCells, targCells, 'align');
+        }
+
+        function swapAttributes(jQuerySetA, jQuerySetB, attributeName) {
+            var attrValueA = jQuerySetA.attr(attributeName);
+            var attrValueB = jQuerySetB.attr(attributeName);
+            if (typeof attrValueB == 'undefined') attrValueB = "";
+            if (typeof attrValueA == 'undefined') attrValueA = "";
+            jQuerySetA.attr(attributeName, attrValueB);
+            jQuerySetB.attr(attributeName, attrValueA);
         }
     </script>
 </head>
