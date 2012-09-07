@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <h2>
-            How do I detect a column has been dragged off the grid?
+            Prove the column alignment is not copied when repositioned.
         </h2>
         <telerik:RadScriptManager runat="server" EnableScriptLocalization="True" />
         <telerik:RadGrid ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1"
@@ -28,7 +28,7 @@
                 </ExpandCollapseColumn>
                 <Columns>
                     <telerik:GridBoundColumn DataField="ProductID" DataType="System.Int32" HeaderText="ProductID"
-                        ReadOnly="True" SortExpression="ProductID" UniqueName="ProductID">
+                        ReadOnly="True" SortExpression="ProductID" UniqueName="ProductID" ItemStyle-HorizontalAlign="Right">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="ProductName" HeaderText="ProductName" SortExpression="ProductName"
                         UniqueName="ProductName">
@@ -37,10 +37,10 @@
                         UniqueName="CategoryName">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="UnitPrice" DataType="System.Decimal" HeaderText="UnitPrice"
-                        SortExpression="UnitPrice" UniqueName="UnitPrice">
+                        SortExpression="UnitPrice" UniqueName="UnitPrice" ItemStyle-HorizontalAlign="Right">
                     </telerik:GridBoundColumn>
                     <telerik:GridBoundColumn DataField="UnitsInStock" DataType="System.Int16" HeaderText="UnitsInStock"
-                        SortExpression="UnitsInStock" UniqueName="UnitsInStock">
+                        SortExpression="UnitsInStock" UniqueName="UnitsInStock" ItemStyle-HorizontalAlign="Right">
                     </telerik:GridBoundColumn>
                 </Columns>
             </MasterTableView>
