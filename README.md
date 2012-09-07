@@ -1,4 +1,4 @@
-How-To-Work-Around-The-Telerik-Radgrid-Column-Reorder-Alignment-Bug
+How To Work Around The Telerik Radgrid Column Reorder Alignment Bug
 ===================================================================
 
 When you set ReorderColumnsOnClient to true on the Telerik RadGrid and swap columns with different 
