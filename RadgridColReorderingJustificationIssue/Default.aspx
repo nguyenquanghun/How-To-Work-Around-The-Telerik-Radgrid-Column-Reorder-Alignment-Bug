@@ -8,7 +8,11 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
     <script language="javascript" type="text/javascript">
         function grid_OnColumnSwapped(sender, eventArgs) {
-            var src  = eventArgs.get_gridSourceColumn().get_element();
+            swapColumnAlignmentsAfterClientsideColumnReordering(eventArgs);
+        }
+
+        function swapColumnAlignmentsAfterClientsideColumnReordering(eventArgs) {
+            var src = eventArgs.get_gridSourceColumn().get_element();
             var targ = eventArgs.get_gridTargetColumn().get_element();
             var srcPosition = src.cellIndex + 1;
             var targPosition = targ.cellIndex + 1;
