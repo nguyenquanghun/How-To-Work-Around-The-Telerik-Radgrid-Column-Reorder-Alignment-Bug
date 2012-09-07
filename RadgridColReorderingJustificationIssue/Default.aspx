@@ -17,16 +17,10 @@
             if (srcCells.length >= 1) {
                 var srcAlign = srcCells.attr('align');
                 var targAlign = targCells.attr('align');
-                if (typeof targAlign == 'undefined')
-                    srcCells.removeAttr('align');
-                else
-                    srcCells.attr('align', targAlign);
-                if (typeof srcAlign == 'undefined')
-                    targCells.removeAttr('align');
-                else
-                    targCells.attr('align', srcAlign);
-//                srcCells.attr('align', targAlign);
-//                targCells.attr('align', srcAlign);
+                if (typeof targAlign == 'undefined') targAlign = "";
+                if (typeof srcAlign == 'undefined') srcAlign = "";
+                srcCells.attr('align', targAlign);
+                targCells.attr('align', srcAlign);
             }
 
             $('#log').append('<li>OnColumnSwapped: ' + src.cellIndex + '(' + src.align + ')->' + targ.cellIndex + '(' + targ.align + ')</li>');
