@@ -13,3 +13,5 @@ not my app).  I didn't want to get into changing the cells and trying to find al
 this js function to resolve it unintrusively.
 
 The commit log is fairly clean if you want to see the line of thinking which went into this fix.
+
+If you're just looking for the solution, it's the 3 javascript functions in default.aspx.
