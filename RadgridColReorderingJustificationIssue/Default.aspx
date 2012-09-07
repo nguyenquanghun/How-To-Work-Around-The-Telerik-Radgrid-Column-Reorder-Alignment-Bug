@@ -22,14 +22,6 @@
                 srcCells.attr('align', targAlign);
                 targCells.attr('align', srcAlign);
             }
-
-            $('#log').append('<li>OnColumnSwapped: ' + src.cellIndex + '(' + src.align + ')->' + targ.cellIndex + '(' + targ.align + ')</li>');
-        }
-
-        function grid_OnColumnSwapping(sender, eventArgs) {
-            var srcIndex  = eventArgs.get_gridSourceColumn().get_element().cellIndex;
-            var targIndex = eventArgs.get_gridTargetColumn().get_element().cellIndex;
-            $('#log').append('<li>OnColumnSwapping: ' + srcIndex + '->' + targIndex +'</li>');
         }
     </script>
 </head>
@@ -43,8 +35,7 @@
         <telerik:RadGrid ID="grid" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1"
             GridLines="None">
             <ClientSettings AllowColumnsReorder="True" ReorderColumnsOnClient="True" 
-                    ClientEvents-OnColumnSwapped="grid_OnColumnSwapped" 
-                    ClientEvents-OnColumnSwapping="grid_OnColumnSwapping">
+                    ClientEvents-OnColumnSwapped="grid_OnColumnSwapped">
             </ClientSettings>
             <MasterTableView DataKeyNames="ProductID" DataSourceID="SqlDataSource1">
                 <CommandItemSettings ExportToPdfText="Export to Pdf"></CommandItemSettings>
